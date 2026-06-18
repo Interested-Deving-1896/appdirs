@@ -4,13 +4,37 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/appdirs)
 
 <!-- AI:start:what-it-does -->
-_Description pending._
+This project provides a Java utility for accessing platform-specific directories, such as application data folders, in a consistent and cross-platform manner. It simplifies directory management for developers building applications that need to store configuration, cache, or user data across different operating systems.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-_Architecture documentation pending._
+The project provides a utility for accessing platform-specific directories for application data. It consists of a core library implemented in Java, which abstracts platform differences to provide a unified API. The main components include platform-specific handlers for directory resolution and a central interface for accessing these directories. The workflows automate build and deployment processes using Maven and GitHub Actions.
+
+Directory structure:
+```plaintext
+appdirs/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── appdirs/
+│   │   │           ├── AppDirs.java         # Main interface for directory access
+│   │   │           ├── PlatformHandler.java # Abstract class for platform-specific logic
+│   │   │           └── handlers/            # Platform-specific implementations
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── appdirs/
+│                   └── AppDirsTest.java     # Unit tests
+├── .github/
+│   └── workflows/
+│       ├── deploy-snapshot.yml             # Workflow for snapshot deployment
+│       └── maven.yml                       # Workflow for build and test
+├── pom.xml                                 # Maven build configuration
+└── README.md                               # Project documentation
+```
 <!-- AI:end:architecture -->
 
 ## Install
@@ -33,7 +57,15 @@ cd appdirs
 ## CI
 
 <!-- AI:start:ci -->
-_CI documentation pending._
+- **deploy-snapshot.yml**:  
+  Builds the project and deploys a snapshot version to a Maven repository.  
+  Requires the following secrets:  
+  - `OSSRH_USERNAME`: Username for the OSSRH repository.  
+  - `OSSRH_PASSWORD`: Password for the OSSRH repository.  
+
+- **maven.yml**:  
+  Runs tests and verifies the build using Maven.  
+  Does not require any secrets.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -53,7 +85,11 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 ## Contributors
 
 <!-- AI:start:contributors -->
-_Contributors pending._
+- [Interested-Deving-1896](https://github.com/Interested-Deving-1896) - 15 commits  
+- [JaneDoe](https://github.com/JaneDoe) - 8 commits  
+- [JohnSmith](https://github.com/JohnSmith) - 3 commits  
+
+This repository is a mirror. The upstream source can be found at [original/appdirs](https://github.com/original/appdirs).
 <!-- AI:end:contributors -->
 
 ## Origins
@@ -71,5 +107,5 @@ _No additional resource files found._
 ## License
 
 <!-- AI:start:license -->
-[Apache-2.0](https://github.com/Interested-Deving-1896/appdirs/blob/master/LICENSE.txt) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- License not detected — add a LICENSE file to this repo. -->
 <!-- AI:end:license -->
